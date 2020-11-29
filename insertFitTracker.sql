@@ -24,11 +24,30 @@ INSERT INTO Weight(Date_, Weight)
 	('02/09/2020', '170'),
 	('02/10/2020', '125');
 
-INSERT INTO Workout(Intensity, Type_, Duration, Calories_Burnt)
+INSERT INTO Records(ID,Date_)
 	VALUES
-	('Medium', 'Jogging', '25', '50'),
-	('Low', 'Walking', '20', '21'),
-	('High', 'Sprints', '30', '100');
+	('1','01/21/2020'),
+	('4','02/08/2020'),
+	('3','02/04/2020'),
+	('2','02/03/2020'),
+	('6','02/05/2020'),
+	('5','02/02/2020'),
+	('7','02/06/2020'),
+	('8','02/07/2020'),
+	('10','02/09/2020'),
+	('9','02/10/2020');
+
+INSERT INTO Workout(Date_,Intensity, Type_, Duration, Calories_Burnt)
+	VALUES
+	('01/21/2020','Medium', 'Jogging', '25', '50'),
+	('02/03/2020','Low', 'Walking', '20', '21'),
+	('02/04/2020','High', 'Sprints', '30', '100');
+
+INSERT INTO Does_Workout(ID,Date_)
+	VALUES
+	('1','01/21/2020'),
+	('2','02/03/2020'),
+	('3','02/04/2020');
 
 INSERT INTO Food_Bev(Fname, Serving_Size, Calories)
 	VALUES
@@ -52,15 +71,25 @@ INSERT INTO Nutrient(Sname, Rec_val)
 	('Protein', '50g'),
 	('Vitamin C', '90mg');
 
-INSERT INTO Eats(Fname, Eat_Date)
+INSERT INTO Sig_Nutrient(Fname,Sname,Amount)
 	VALUES
-	('Chicken', '01/30/2020'),
-	('Water', '02/01/2020'),
-	('Egg', '02/02/2020'),
-	('Coffee', '02/03/2020'),
-	('Coke', '02/04/2020'),
-	('Steak', '02/05/2020'),
-	('Rice', '02/06/2020'),
-	('Mash Potatoes', '02/07/2020'),
-	('Cheese', '02/08/2020'),
-	('Tea', '02/09/2020');
+	('Egg','Protein','10g'),
+	('Cheese','Carbohydrates','45g'),
+	('Chicken','Protein','20g'),
+	('Steak','Protein','25g'),
+	('Tea','Vitamin C','50mg'),
+	('Coke','Carbohydrates','125g'),
+	('Mash Potatoes','Carbohydrates','100g');
+
+INSERT INTO Eats(Fname, ID, Eat_Date)
+	VALUES
+	('Chicken','2','01/30/2020'),
+	('Water','2', '02/01/2020'),
+	('Egg','1', '02/02/2020'),
+	('Coffee','1', '02/03/2020'),
+	('Coke','3', '02/04/2020'),
+	('Steak','3', '02/05/2020'),
+	('Rice','5', '02/06/2020'),
+	('Mash Potatoes','6', '02/07/2020'),
+	('Cheese','6', '02/08/2020'),
+	('Tea','5', '02/09/2020');
