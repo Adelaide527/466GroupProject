@@ -14,7 +14,7 @@ try{
   echo"<h1>Enter Your Workout</h1>";
   echo"</header>";
 
-  echo"<form action='http://students.cs.niu.edu/~z1871561/AddPart.php' method='GET'>";
+  echo"<form action='http://students.cs.niu.edu/~z1871561/page5Sub.php' method='GET'>";
 
   //Holds the ID
   echo"Enter your ID:<input type='text' name='ID'/><br>";
