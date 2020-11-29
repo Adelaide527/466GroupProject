@@ -61,7 +61,6 @@ CREATE TABLE Food_Bev(
 CREATE TABLE Nutrient(
 	Sname char(20) NOT NULL,
 	Rec_val int NOT NULL,
-	Amount int NOT NULL,
 
 	PRIMARY KEY (Sname)
 );
@@ -69,6 +68,7 @@ CREATE TABLE Nutrient(
 CREATE TABLE Sig_Nutrient(
 	Fname char(20) NOT NULL,
 	Sname char(20) NOT NULL,
+	Amount int NOT NULL,
 
 	FOREIGN KEY (Fname) references Food_Bev(Fname),
 	FOREIGN KEY (Sname) references Nutrient(Sname)
