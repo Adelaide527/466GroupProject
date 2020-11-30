@@ -80,6 +80,7 @@ CREATE TABLE Eats(
 	Fname char(20) NOT NULL,
 	ID int NOT NULL,
 	Eat_Date Date NOT NULL,
+	Serving int NOT NULL,
 
 	FOREIGN KEY (Fname) references Food_Bev(Fname),
 	FOREIGN KEY (ID) references Account(ID)
