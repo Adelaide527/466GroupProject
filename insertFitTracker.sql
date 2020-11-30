@@ -92,17 +92,18 @@ INSERT INTO Sig_Nutrient(Fname,Sname,Amount)
 	('Tea','Vitamin C','50mg'),
 	('Coke','Carbohydrates','125g');
 
-INSERT INTO Eats(Fname, ID, Eat_Date)
+/*The serving is still in g/oz*/
+INSERT INTO Eats(Fname, ID, Eat_Date, Serving)
 	VALUES
-	('Chicken','2','2020-01-30'),
-	('Water','2', '2020-02-01'),
-	('Egg','1', '2020-02-02'),
-	('Coffee','1', '2020-02-03'),
-	('Coke','3', '2020-02-04'),
-	('Steak','3', '2020-02-05'),
-	('Rice','5', '2020-02-06'),
-	('Cheese','6', '2020-02-08'),
-	('Tea','5', '2020-02-09');
+	('Chicken','2','2020-01-30', 128),
+	('Water','2', '2020-02-01', 8),
+	('Egg','1', '2020-02-02', 50),
+	('Coffee','1', '2020-02-03', 8),
+	('Coke','3', '2020-02-04', 8),
+	('Steak','3', '2020-02-05', 73),
+	('Rice','5', '2020-02-06', 128),
+	('Cheese','6', '2020-02-08', 28),
+	('Tea','5', '2020-02-09', 8);
 
 INSERT INTO Conversion(From_, To_, Rate)
 	VALUES
