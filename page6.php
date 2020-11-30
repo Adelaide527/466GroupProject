@@ -1,13 +1,11 @@
 \<html><head><title>Workouts</title></head><body>
 <?php
 
-include('secrets.php');
+include('groupdb.php');
 
 
 try{
-        //Connects to Dadabase
-  $dsn = "mysql:host=courses;dbname=z1871561";
-  $pdo = new PDO($dsn, $username, $password);
+ 
   $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
   echo"<header>";
