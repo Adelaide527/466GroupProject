@@ -1,15 +1,13 @@
 # 466GroupProject
 
 ### Checklist
-- [x] ER Diagram
-- [ ] ER Diagram Description
-- [ ] Relational Schema
-- [ ] SQL Script to Create Tables
-- [ ] SQL Script to Insert data into tables
+- [ ] ER Diagram **(Needs update)**
+- [ ] ER Diagram Description **(Needs update)**
+- [ ] Relational Schema **(Needs update)**
+- [x] SQL Script to Create Tables
+- [x] SQL Script to Insert data into tables
 - [ ] PHP code for application
-- [ ] Include like to URL
-
-- [ ] Prepare for presentation??
+- [ ] Include link to URL
 
 ### On page:
 - [ ] Page that allows for the addition of new food/drinks to database (Include calories/macros/micronutrient values)
