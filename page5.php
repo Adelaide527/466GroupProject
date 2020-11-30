@@ -1,4 +1,4 @@
-<html><head><title>Workouts</title></head><body>
+<html><head><title>Add Workouts</title></head><body>
 <?php
 
 include('secrets.php');
@@ -14,7 +14,7 @@ try{
   echo"<h1>Enter Your Workout</h1>";
   echo"</header>";
 
-  echo"<form action='http://students.cs.niu.edu/~z1871561/page5Sub.php' method='GET'>";
+  echo"<form action='http://students.cs.niu.edu/~z1871561/workout.php' method='POST'>";
 
   //Holds the ID
   echo"Enter your ID:<input type='text' name='ID'/><br>";
@@ -37,8 +37,37 @@ try{
   echo"<input type='submit' name='submit'/>\n";
   echo"</form>";
 
+  if(isset($_POST['submit'])){
 
+  $Wrs=$pdo->prepare("INSERT INTO Workout VALUES(:Date_,:Intensity,:Type,:Duration,:Calories);");
 
+  $Wrs->bindParam(':Intensity',$_POST['Intensity']);
+
+  $Wrs->bindParam(':Date_',$_POST['Date']);
+
+  $Wrs->bindParam(':Type',$_POST['Type']);
+
+  $Wrs->bindParam(':Duration',$_POST['Duration']);
+
+  $Wrs->bindParam(':Calories',$_POST['Calories']);
+
+  $Wrs->execute();
+
+  if(!$Wrs){echo"Error adding to Workout";die();}
+
+  $Wrs=$pdo->prepare("INSERT INTO Does_Workout (ID,Date_) VALUES(:ID,:Date_);");
+
+  $Wrs->bindParam(':ID',$_POST['ID']);
+
+  $Wrs->bindParam(':Date_',$_POST['Date']);
+
+  $Wrs->execute();
+
+  if(!$Wrs){echo"Error adding to Does_Workout";die();}
+
+  echo"<br>Workout Added!<br>";
+
+  }
 }
 catch(PDOexception $e) {
   echo "Connection to database failed: " . $e->getMessage();
