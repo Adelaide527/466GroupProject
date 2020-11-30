@@ -53,7 +53,7 @@ CREATE TABLE Does_Workout(
 
 CREATE TABLE Food_Bev(
 	Fname char(20) NOT NULL,
-	Serving_Size char(20) NOT NULL,
+	Serving_Size int NOT NULL,
 	Calories int NOT NULL,
 	Type char(10) NOT NULL,
 
