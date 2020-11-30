@@ -49,18 +49,19 @@ INSERT INTO Does_Workout(ID,Date_)
 	('2','02/03/2020'),
 	('3','02/04/2020');
 
-INSERT INTO Food_Bev(Fname, Serving_Size, Calories)
+/*If it is a food, then the unit is g. If it is a bev, the unit is oz*/
+INSERT INTO Food_Bev(Fname, Serving_Size, Calories, Type)
 	VALUES
-	('Cheese', '1 ounce', '113'),
-	('Tea', '8fl ounces', '2'),
-	('Steak', '1 steak', '679'),
-	('Chicken', '1 cup', '335'),
-	('Egg', '1 large egg', '78'),
-	('Water', '1 cup', '0'),
-	('Coffee', '1 cup', '1'),
-	('Coke', '12 ounces', '140'),
-	('Mash Potatoes', '1 cup', '214'),
-	('Rice', '1 cup', '206');
+	('Cheese', '28', '113', 'Food'),
+	('Tea', '8', '2', 'Bev'),
+	('Steak', '73', '679', 'Food'),
+	('Chicken', '128', '335', 'Food'),
+	('Egg', '50', '78', 'Food'),
+	('Water', '8', '0', 'Bev'),
+	('Coffee', '8', '1', 'Bev'),
+	('Coke', '12', '140', 'Bev'),
+	('Mash Potatoes', '128', '214', 'Food'),
+	('Rice', '128', '206', 'Food');
 
 INSERT INTO Nutrient(Sname, Rec_val)
 	VALUES
@@ -93,3 +94,13 @@ INSERT INTO Eats(Fname, ID, Eat_Date)
 	('Mash Potatoes','6', '02/07/2020'),
 	('Cheese','6', '02/08/2020'),
 	('Tea','5', '02/09/2020');
+
+INSERT INTO Conversion(From_, To_, Rate)
+	VALUES
+	('c', 'g', 128.0),
+	('mg', 'g', 0.001),
+	('g', 'g', 1.0),
+	('kg', 'g', 1000.0),
+	('lb', 'g', 453.592),
+	('oz', 'oz', 1.0),
+	('ml', 'oz', 0.034);
