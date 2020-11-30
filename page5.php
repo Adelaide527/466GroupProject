@@ -27,7 +27,7 @@ try{
   echo"<option value='High'>High</option>";
   echo"</select><br>";
   //Holds Duration
-  echo"Duration:<input type='text' name='Duration'/><br>";
+  echo"Duration(min):<input type='text' name='Duration'/><br>";
   //Holds the Calories Burnt
   echo"Calories Burned:<input type='text' name='Calories'/><br>";
   //Holds the Date
