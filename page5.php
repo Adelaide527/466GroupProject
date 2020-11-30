@@ -1,20 +1,18 @@
 <html><head><title>Add Workouts</title></head><body>
 <?php
 
-include('secrets.php');
+include('groupdb.php');
 
 
 try{
-        //Connects to Dadabase
-  $dsn = "mysql:host=courses;dbname=z1871561";
-  $pdo = new PDO($dsn, $username, $password);
+
   $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
   echo"<header>";
   echo"<h1>Enter Your Workout</h1>";
   echo"</header>";
 
-  echo"<form action='http://students.cs.niu.edu/~z1871561/workout.php' method='POST'>";
+  echo"<form action='http://students.cs.niu.edu/~z1871561/page5.php' method='POST'>";
 
   //Holds the ID
   echo"Enter your ID:<input type='text' name='ID'/><br>";
