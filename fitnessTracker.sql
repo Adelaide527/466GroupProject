@@ -19,7 +19,7 @@ CREATE TABLE Account(
 );
 
 CREATE TABLE Weight(
-	Date_ char(20) NOT NULL,
+	Date_ Date NOT NULL,
 	Weight int NOT NULL,
 
 	PRIMARY KEY (Date_)
@@ -27,14 +27,14 @@ CREATE TABLE Weight(
 
 CREATE TABLE Records(
 	ID int NOT NULL AUTO_INCREMENT,
-	Date_ char(20) NOT NULL,
+	Date_ Date NOT NULL,
 
 	FOREIGN KEY (ID) references Account(ID),
 	FOREIGN KEY (Date_) references Weight(Date_)
 );
 
 CREATE TABLE Workout(
-	Date_ char(20),
+	Date_ Date,
 	Intensity char(20) NOT NULL,
 	Type_ char(20) NOT NULL,
 	Duration int NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Workout(
 
 CREATE TABLE Does_Workout(
 	ID int NOT NULL AUTO_INCREMENT,
-	Date_ char(20) NOT NULL,
+	Date_ Date NOT NULL,
 	
 	FOREIGN KEY (ID) references Account(ID),
 	FOREIGN KEY (Date_) references Workout(Date_)
@@ -79,7 +79,7 @@ CREATE TABLE Sig_Nutrient(
 CREATE TABLE Eats(
 	Fname char(20) NOT NULL,
 	ID int NOT NULL,
-	Eat_Date char(20) NOT NULL,
+	Eat_Date Date NOT NULL,
 
 	FOREIGN KEY (Fname) references Food_Bev(Fname),
 	FOREIGN KEY (ID) references Account(ID)
