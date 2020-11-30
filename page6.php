@@ -1,15 +1,15 @@
-\<html><head><title>Workouts</title></head><body>
+<html><head><title>Workouts</title></head><body>
 <?php
 
 include('groupdb.php');
 
 
 try{
- 
+
   $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
   echo"<header>";
-  echo"<h1>Enter Your Workout</h1>";
+  echo"<h1>Look At Your Workouts</h1>";
   echo"</header>";
 
   echo"<form action='http://students.cs.niu.edu/~z1871561/page6.php' method='POST'>";
@@ -30,9 +30,15 @@ try{
   if(isset($_POST['submit'])){
 
 
-  $Wrs=$pdo->prepare("SELECT * FROM Workout WHERE Date_ IN (SELECT Date_ FROM Does_Workout WHERE ID=:ID);");
+  $Wrs=$pdo->prepare("SELECT * FROM Workout WHERE Date_ > :Sdate AND Date_ < :Edate AND Date_ IN (SELECT Date_ FROM Does_Workout WHERE ID=:ID);");
 
-  $Wrs->execute(array(":ID" => $_POST["ID"]));
+  $Wrs->bindParam(':ID',$_POST['ID']);
+
+  $Wrs->bindParam(':Sdate',$_POST['Sdate']);
+
+  $Wrs->bindParam(':Edate',$_POST['Edate']);
+
+  $Wrs->execute();
 
   $Wrows=$Wrs->fetchALL(PDO::FETCH_ASSOC);
 
@@ -56,9 +62,15 @@ try{
   }
   echo"</table>";
 
-  $Ars=$pdo->prepare("SELECT SUM(Calories_Burnt), AVG(DISTINCT Calories_Burnt) FROM Workout WHERE Date_ IN (SELECT Date_ FROM Does_Workout WHERE ID=:ID);");
+  $Ars=$pdo->prepare("SELECT SUM(Calories_Burnt), AVG(DISTINCT Calories_Burnt) FROM Workout WHERE Date_ > :Sdate AND Date_ < :Edate AND Date_ IN (SELECT Date_ FROM Does_Workout WHERE ID=:ID);");
 
-  $Ars->execute(array(":ID" => $_POST["ID"]));
+  $Ars->bindParam(':ID',$_POST['ID']);
+
+  $Ars->bindParam(':Sdate',$_POST['Sdate']);
+
+  $Ars->bindParam(':Edate',$_POST['Edate']);
+
+  $Ars->execute();
 
   $Arows=$Ars->fetchALL(PDO::FETCH_BOTH);
 
