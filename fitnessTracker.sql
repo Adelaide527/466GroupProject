@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS Workout;
 DROP TABLE IF EXISTS Records;
 DROP TABLE IF EXISTS Weight;
 DROP TABLE IF EXISTS Account;
+DROP TABLE IF EXISTS Conversion;
 
 
 CREATE TABLE Account(
@@ -54,6 +55,7 @@ CREATE TABLE Food_Bev(
 	Fname char(20) NOT NULL,
 	Serving_Size char(20) NOT NULL,
 	Calories int NOT NULL,
+	Type char(10) NOT NULL,
 
 	PRIMARY KEY (Fname)
 );
@@ -83,4 +85,10 @@ CREATE TABLE Eats(
 	FOREIGN KEY (ID) references Account(ID)
 );
 
+CREATE TABLE Conversion(
+	From_ varchar(10) NOT NULL,
+	To_ varchar(10) NOT NULL,
+	Rate float(3) NOT NULL,
 
+	PRIMARY KEY (From_, To_)
+);
