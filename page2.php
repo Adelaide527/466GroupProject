@@ -8,6 +8,19 @@
 
 <body>
 
+<?php
+	
+include('groupdb.php');
+	
+try {
+	$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOexception $e)
+{
+	echo "Connection to database failed" . $e->getMessage();
+}
+?>
+
 <form method="POST" >
 	<label for="weight">Enter your new weight: </label>
 	<input type="number" id="weight" name="weight">lbs</input>
