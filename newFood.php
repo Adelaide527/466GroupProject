@@ -3,7 +3,7 @@
 <head><title>Enter meal</title></head>
 <body>
 
-<h2>Enter a meal</h2>
+<h2>Enter a new food or beverage</h2>
 
 <form action="http://students.cs.niu.edu/~z1836805/enterFood.php" method="POST">
   <p>Name:
