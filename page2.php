@@ -11,7 +11,8 @@
 include('groupdb.php');
 	
 try {
-	$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	
+  $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	
   echo"<header>";
   echo"<h1>Enter a weight</h1>";
